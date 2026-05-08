@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar movimiento - Mi FinanzApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .bg-sidebar { background-color: #3b3f5c; }
+        .sidebar-text { white-space: nowrap; font-size: 0.82rem; }
+        /* Filtros de color para iconos */
+        .icon-green { filter: invert(57%) sepia(61%) saturate(432%) hue-rotate(114deg) brightness(92%) contrast(88%); }
+        .icon-red { filter: invert(47%) sepia(85%) saturate(1450%) hue-rotate(326deg) brightness(101%) contrast(101%); }
+        .icon-indigo { filter: invert(31%) sepia(13%) saturate(1250%) hue-rotate(193deg); }
+        .icon-orange { filter: invert(75%) sepia(50%) saturate(1000%) hue-rotate(5deg); }
+    </style>
+</head>
+<body class="bg-gray-100 flex h-screen overflow-hidden">
+
+    <!-- Sidebar Lateral -->
+    <aside class="bg-sidebar w-72 flex-shrink-0 flex flex-col text-white p-6">
+        <div class="text-2xl font-bold mb-10 flex items-center gap-2">
+            <span>Mi Finanz</span><span class="text-green-400">App</span>
+        </div>
+        
+        <nav class="flex-1 space-y-2">
+            <a href="index.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/inicio.svg" class="w-5 h-5 invert" alt="Inicio">
+                <span class="sidebar-text">Inicio</span>
+            </a>
+            <a href="movimientos.html" class="flex items-center gap-3 bg-white/20 p-3 rounded-xl transition">
+                <img src="icons/movimiento.svg" class="w-5 h-5 invert" alt="Registrar">
+                <span class="sidebar-text">Registrar movimiento</span>
+            </a>
+            <a href="historial.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/historial.svg" class="w-5 h-5 invert" alt="Historial">
+                <span class="sidebar-text">Historial</span>
+            </a>
+            <a href="categorias.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/categoria.svg" class="w-5 h-5 invert" alt="Categorias">
+                <span class="sidebar-text">Categorías</span>
+            </a>
+            <a href="reportes.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/reporte.svg" class="w-5 h-5 invert" alt="Reportes">
+                <span class="sidebar-text">Reportes y análisis</span>
+            </a>
+            <a href="presupuesto.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/alcancia.svg" class="w-5 h-5 invert" alt="Presupuesto">
+                <span class="sidebar-text">Presupuesto mensual</span>
+            </a>
+            <a href="alertas.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/campana.svg" class="w-5 h-5 invert" alt="Alertas">
+                <span class="sidebar-text">Recordatorios y notificaciones</span>
+            </a>
+            <a href="educativo.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/graduacion.svg" class="w-5 h-5 invert" alt="Educativo">
+                <span class="sidebar-text">Contenido educativo</span>
+            </a>
+            <a href="configuracion.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition mt-auto">
+                <img src="icons/configuracion.svg" class="w-5 h-5 invert" alt="Ajustes">
+                <span class="sidebar-text">Configuración</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <header class="flex justify-between items-start mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-800">Registrar movimiento</h1>
+                <p class="text-gray-500 text-sm">Agrega un nuevo ingreso o gasto a tu cuenta</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="text-right">
+                    <span class="block text-sm font-semibold text-slate-700">Pedro</span>
+                    <span class="block text-[10px] text-gray-400 font-medium">Usuario Pro</span>
+                </div>
+                <div class="w-10 h-10 bg-slate-400 rounded-full border-2 border-white shadow-sm overflow-hidden">
+                    <img src="icons/user.svg" class="w-full h-full object-cover" alt="User">
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Columna del Formulario -->
+            <div class="lg:col-span-2 space-y-6">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-slate-700 mb-6">Información del movimiento</h3>
+                    
+                    <form class="space-y-6">
+                        <!-- Selector de Tipo -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <button type="button" class="flex items-center justify-center gap-2 border-2 border-emerald-400 text-emerald-500 py-3 rounded-xl font-medium bg-emerald-50/50 transition">
+                                <img src="icons/ingreso.svg" class="w-4 h-4 icon-green" alt="Ingreso"> Ingreso
+                            </button>
+                            <button type="button" class="flex items-center justify-center gap-2 border-2 border-red-100 text-red-400 py-3 rounded-xl font-medium hover:border-red-200 transition">
+                                <img src="icons/gasto.svg" class="w-4 h-4 icon-red" alt="Gasto"> Gasto
+                            </button>
+                        </div>
+
+                        <!-- Monto -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-600 mb-2">Monto</label>
+                            <div class="flex border border-gray-200 rounded-xl overflow-hidden focus-within:border-indigo-400 transition">
+                                <span class="bg-gray-50 px-4 py-3 text-gray-400 border-r text-xs font-bold">COP</span>
+                                <input type="text" placeholder="0,00" class="w-full px-4 py-3 outline-none text-slate-700 font-medium">
+                            </div>
+                        </div>
+
+                        <!-- Categoría -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-600 mb-2">Categoría</label>
+                            <div class="relative">
+                                <div class="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                                    <img src="icons/categoria.svg" class="w-4 h-4 opacity-40" alt="Icon">
+                                </div>
+                                <select class="w-full border border-gray-200 rounded-xl pl-11 pr-4 py-3 appearance-none bg-white text-slate-500 outline-none focus:border-indigo-400 transition">
+                                    <option>Selecciona una categoría</option>
+                                    <option>Alimentación</option>
+                                    <option>Transporte</option>
+                                    <option>Ocio</option>
+                                </select>
+                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-300 text-[10px]">▼</div>
+                            </div>
+                        </div>
+
+                        <!-- Fecha -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-600 mb-2">Fecha</label>
+                            <div class="relative">
+                                <div class="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                                    <img src="icons/historial.svg" class="w-4 h-4 opacity-40" alt="Calendar">
+                                </div>
+                                <input type="date" class="w-full border border-gray-200 rounded-xl pl-11 pr-4 py-3 text-slate-500 outline-none focus:border-indigo-400 transition" value="2026-05-01">
+                            </div>
+                        </div>
+
+                        <!-- Descripción -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-600 mb-2">Descripción <span class="text-gray-400 font-normal">(opcional)</span></label>
+                            <textarea placeholder="Ej. Pago de salario, Supermercado, etc." class="w-full border border-gray-200 rounded-xl px-4 py-3 h-24 outline-none resize-none focus:border-indigo-400 transition text-slate-600 text-sm"></textarea>
+                            <p class="text-right text-[10px] text-gray-400 mt-1 uppercase tracking-wider">0 / 100 caracteres</p>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <button type="button" class="border border-gray-200 py-3 rounded-xl font-semibold text-slate-400 hover:bg-gray-50 transition">Cancelar</button>
+                            <button type="submit" class="bg-indigo-500 py-3 rounded-xl font-semibold text-white shadow-lg shadow-indigo-100 hover:bg-indigo-600 transition">Guardar movimiento</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Columna Derecha -->
+            <div class="space-y-6">
+                <!-- Resumen -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-slate-700 mb-4">Resumen del movimiento</h3>
+                    <div class="space-y-4 text-[13px]">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                            <span class="text-gray-400">Tipo</span>
+                            <span class="bg-emerald-100 text-emerald-600 px-3 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider">Ingreso</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-50">
+                            <span class="text-gray-400">Monto</span>
+                            <span class="font-bold text-slate-700 italic">COP 0,00</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-50">
+                            <span class="text-gray-400">Categoría</span>
+                            <span class="text-slate-300">—</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-50">
+                            <span class="text-gray-400">Fecha</span>
+                            <span class="text-slate-600 font-medium">01-Mayo-2026</span>
+                        </div>
+                        <div class="flex justify-between py-2">
+                            <span class="text-gray-400">Descripción</span>
+                            <span class="text-slate-300">—</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frecuentes -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-slate-700 mb-6">Movimientos frecuentes</h3>
+                    <div class="space-y-5">
+                        <div class="flex items-center justify-between group cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-emerald-100 p-2.5 rounded-full"><img src="icons/salario.svg" class="w-4 h-4 icon-green" alt="S"></div>
+                                <div><p class="text-xs font-bold text-slate-700">Salario</p><p class="text-[10px] text-gray-400">Ingresos</p></div>
+                            </div>
+                            <span class="text-xs font-bold text-emerald-500">+5.200.000,00</span>
+                        </div>
+                        <div class="flex items-center justify-between group cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-indigo-100 p-2.5 rounded-full"><img src="icons/carrrito.svg" class="w-4 h-4 icon-indigo" alt="C"></div>
+                                <div><p class="text-xs font-bold text-slate-700">Supermercado</p><p class="text-[10px] text-gray-400">Alimentación</p></div>
+                            </div>
+                            <span class="text-xs font-bold text-red-500">-185.000,00</span>
+                        </div>
+                        <div class="flex items-center justify-between group cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-orange-100 p-2.5 rounded-full"><img src="icons/gasolina.svg" class="w-4 h-4 icon-orange" alt="G"></div>
+                                <div><p class="text-xs font-bold text-slate-700">Gasolina</p><p class="text-[10px] text-gray-400">Transporte</p></div>
+                            </div>
+                            <span class="text-xs font-bold text-red-500">-50.000,00</span>
+                        </div>
+                    </div>
+                    <a href="historial.html" class="inline-flex items-center mt-6 text-[11px] font-bold text-indigo-500 hover:text-indigo-700 transition gap-1">
+                        Ver todos los movimientos <span class="text-[8px]">❯</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

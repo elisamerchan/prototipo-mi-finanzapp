@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi FinanzApp - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .bg-sidebar { background-color: #3b3f5c; }
+        .sidebar-text { white-space: nowrap; font-size: 0.82rem; }
+        
+        /* Filtros de color para consistencia visual */
+        .icon-green { filter: invert(57%) sepia(61%) saturate(432%) hue-rotate(114deg) brightness(92%) contrast(88%); }
+        .icon-red { filter: invert(47%) sepia(85%) saturate(1450%) hue-rotate(326deg) brightness(101%) contrast(101%); }
+        .icon-indigo { filter: invert(31%) sepia(13%) saturate(1250%) hue-rotate(193deg); }
+        .icon-orange { filter: invert(75%) sepia(50%) saturate(1000%) hue-rotate(5deg); }
+        .icon-yellow { filter: invert(85%) sepia(60%) saturate(500%) hue-rotate(350deg); }
+    </style>
+</head>
+<body class="bg-gray-100 flex h-screen overflow-hidden">
+
+    <!-- Sidebar Lateral -->
+    <aside class="bg-sidebar w-72 flex-shrink-0 flex flex-col text-white p-6">
+        <div class="text-2xl font-bold mb-10 flex items-center gap-2">
+            <span>Mi Finanz</span><span class="text-green-400">App</span>
+        </div>
+        
+        <nav class="flex-1 space-y-2">
+            <a href="index.html" class="flex items-center gap-3 bg-white/20 p-3 rounded-xl transition">
+                <img src="icons/inicio.svg" class="w-5 h-5 invert" alt="Inicio">
+                <span class="sidebar-text">Inicio</span>
+            </a>
+            <a href="movimientos.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/movimiento.svg" class="w-5 h-5 invert" alt="Registrar">
+                <span class="sidebar-text">Registrar movimiento</span>
+            </a>
+            <a href="historial.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/historial.svg" class="w-5 h-5 invert" alt="Historial">
+                <span class="sidebar-text">Historial</span>
+            </a>
+            <a href="categorias.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/categoria.svg" class="w-5 h-5 invert" alt="Categorias">
+                <span class="sidebar-text">Categorías</span>
+            </a>
+            <a href="reportes.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/reporte.svg" class="w-5 h-5 invert" alt="Reportes">
+                <span class="sidebar-text">Reportes y análisis</span>
+            </a>
+            <a href="presupuesto.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/alcancia.svg" class="w-5 h-5 invert" alt="Presupuesto">
+                <span class="sidebar-text">Presupuesto mensual</span>
+            </a>
+            <a href="alertas.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/campana.svg" class="w-5 h-5 invert" alt="Alertas">
+                <span class="sidebar-text">Recordatorios y notificaciones</span>
+            </a>
+            <a href="educativo.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/graduacion.svg" class="w-5 h-5 invert" alt="Educativo">
+                <span class="sidebar-text">Contenido educativo</span>
+            </a>
+            <a href="configuracion.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition mt-auto">
+                <img src="icons/configuracion.svg" class="w-5 h-5 invert" alt="Ajustes">
+                <span class="sidebar-text">Configuración</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <header class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold text-slate-800">Inicio</h1>
+            <div class="flex items-center gap-3">
+                <div class="text-right">
+                    <span class="block text-sm font-semibold text-slate-700">Pedro</span>
+                    <span class="block text-[10px] text-gray-400 font-medium italic">Usuario Pro</span>
+                </div>
+                <div class="w-10 h-10 bg-slate-400 rounded-full border-2 border-white shadow-sm overflow-hidden">
+                    <img src="icons/user.svg" class="w-full h-full object-cover" alt="User">
+                </div>
+            </div>
+        </header>
+
+        <!-- KPI Cards -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 text-center">
+                <p class="text-gray-400 text-xs font-medium mb-1 uppercase tracking-wider">Saldo general</p>
+                <h2 class="text-2xl font-bold text-slate-800">$25.500.000,00</h2>
+                <p class="text-[10px] text-emerald-500 mt-1 font-medium">Estado financiero actual</p>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 text-center">
+                <p class="text-gray-400 text-xs font-medium mb-1 uppercase tracking-wider">Ingresos del mes</p>
+                <h2 class="text-2xl font-bold text-emerald-500">$7.200.000,00</h2>
+                <p class="text-[10px] text-gray-400 mt-1">Flujo de ingresos mensual</p>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 text-center">
+                <p class="text-gray-400 text-xs font-medium mb-1 uppercase tracking-wider">Gastos del mes</p>
+                <h2 class="text-2xl font-bold text-red-400">$ 4.800.000,00</h2>
+                <p class="text-[10px] text-gray-400 mt-1">Variación: <span class="text-red-500 font-bold">+5%</span> vs ayer</p>
+            </div>
+        </section>
+
+        <!-- Charts and Tables -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                <h3 class="font-bold text-slate-700 mb-6">Distribución de gastos</h3>
+                <div class="flex justify-center items-center h-48">
+                    <div class="relative w-40 h-40 rounded-full border-[12px] border-indigo-500 flex items-center justify-center">
+                        <div class="absolute inset-0 border-[12px] border-emerald-400 border-l-transparent border-b-transparent rotate-45 rounded-full"></div>
+                        <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Gastos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                <h3 class="font-bold text-slate-700 mb-4">Transacciones recientes</h3>
+                <table class="w-full text-[12px]">
+                    <thead class="text-gray-400 text-left border-b border-gray-50 uppercase tracking-tighter">
+                        <tr>
+                            <th class="py-3 font-semibold">Fecha</th>
+                            <th class="py-3 font-semibold">Descripción</th>
+                            <th class="py-3 font-semibold text-right">Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-50">
+                        <tr>
+                            <td class="py-3 text-gray-500">01-Mayo</td>
+                            <td class="py-3 font-medium text-slate-700">Supermercado</td>
+                            <td class="py-3 text-red-500 font-bold text-right">-185.000,00</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-gray-500">30-Abril</td>
+                            <td class="py-3 font-medium text-slate-700">Nómina</td>
+                            <td class="py-3 text-emerald-500 font-bold text-right">+5.200.000,00</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-gray-500">30-Abril</td>
+                            <td class="py-3 font-medium text-slate-700">Gasolina</td>
+                            <td class="py-3 text-red-500 font-bold text-right">-50.000,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Presupuesto -->
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                <h3 class="font-bold text-slate-700 mb-6">Presupuesto por categoría</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 text-[11px]">
+                        <span class="w-24 text-gray-500 font-medium">Alimentación</span>
+                        <div class="flex-1 bg-gray-100 h-1.5 rounded-full overflow-hidden"><div class="bg-indigo-400 h-full w-[70%]"></div></div>
+                        <span class="text-slate-700 font-bold w-8 text-right">70%</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-[11px]">
+                        <span class="w-24 text-gray-500 font-medium">Transporte</span>
+                        <div class="flex-1 bg-gray-100 h-1.5 rounded-full overflow-hidden"><div class="bg-emerald-400 h-full w-[30%]"></div></div>
+                        <span class="text-slate-700 font-bold w-8 text-right">30%</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-[11px]">
+                        <span class="w-24 text-gray-500 font-medium">Ocio</span>
+                        <div class="flex-1 bg-gray-100 h-1.5 rounded-full overflow-hidden"><div class="bg-orange-300 h-full w-[90%]"></div></div>
+                        <span class="text-red-500 font-bold w-8 text-right">90%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recordatorios -->
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                <h3 class="font-bold text-slate-700 mb-6">Próximos pagos</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-2xl border border-gray-100">
+                        <div class="bg-yellow-100 p-2 rounded-xl"><img src="icons/tarjeta.svg" class="w-4 h-4 icon-yellow" alt="Card"></div>
+                        <p class="text-xs font-bold text-slate-600">Tarjeta Crédito <span class="block text-[10px] text-gray-400 font-normal">En 3 días</span></p>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-2xl border border-gray-100">
+                        <div class="bg-red-100 p-2 rounded-xl"><img src="icons/cine.svg" class="w-4 h-4 icon-red" alt="Netflix"></div>
+                        <p class="text-xs font-bold text-slate-600">Netflix <span class="block text-[10px] text-gray-400 font-normal">En 5 días</span></p>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-red-50 rounded-2xl border border-red-100">
+                        <div class="bg-red-200 p-2 rounded-xl"><img src="icons/alerta.svg" class="w-4 h-4 icon-red" alt="Alert"></div>
+                        <p class="text-xs font-bold text-red-600 uppercase">Límite de Ocio <span class="block text-[10px] text-slate-700 font-normal normal-case">Has superado el 90%</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

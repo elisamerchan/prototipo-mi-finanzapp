@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educación Financiera - Mi FinanzApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .bg-sidebar { background-color: #3b3f5c; }
+        .sidebar-text { white-space: nowrap; font-size: 0.82rem; }
+        
+        /* Estilos específicos para la sección educativa */
+        .progress-ring { transform: rotate(-90deg); }
+        .icon-indigo { filter: invert(31%) sepia(13%) saturate(1250%) hue-rotate(193deg); }
+        .card-shadow:hover { transform: translateY(-4px); transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 flex h-screen overflow-hidden">
+
+    <!-- Sidebar Lateral -->
+    <aside class="bg-sidebar w-72 flex-shrink-0 flex flex-col text-white p-6">
+        <div class="text-2xl font-bold mb-10 flex items-center gap-2">
+            <span>Mi Finanz</span><span class="text-green-400">App</span>
+        </div>
+        
+        <nav class="flex-1 space-y-2">
+            <a href="index.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/inicio.svg" class="w-5 h-5 invert" alt="Inicio">
+                <span class="sidebar-text">Inicio</span>
+            </a>
+            <a href="movimientos.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/movimiento.svg" class="w-5 h-5 invert" alt="Registrar">
+                <span class="sidebar-text">Registrar movimiento</span>
+            </a>
+            <a href="historial.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/historial.svg" class="w-5 h-5 invert" alt="Historial">
+                <span class="sidebar-text">Historial</span>
+            </a>
+            <a href="categorias.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/categoria.svg" class="w-5 h-5 invert" alt="Categorias">
+                <span class="sidebar-text">Categorías</span>
+            </a>
+            <a href="reportes.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/reporte.svg" class="w-5 h-5 invert" alt="Reportes">
+                <span class="sidebar-text">Reportes y análisis</span>
+            </a>
+            <a href="presupuesto.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/alcancia.svg" class="w-5 h-5 invert" alt="Presupuesto">
+                <span class="sidebar-text">Presupuesto mensual</span>
+            </a>
+            <a href="alertas.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition">
+                <img src="icons/campana.svg" class="w-5 h-5 invert" alt="Alertas">
+                <span class="sidebar-text">Recordatorios y notificaciones</span>
+            </a>
+            <a href="educativo.html" class="flex items-center gap-3 bg-white/20 p-3 rounded-xl transition">
+                <img src="icons/graduacion.svg" class="w-5 h-5 invert" alt="Educativo">
+                <span class="sidebar-text">Contenido educativo</span>
+            </a>
+            <a href="configuracion.html" class="flex items-center gap-3 p-3 hover:bg-white/10 rounded-xl transition mt-auto">
+                <img src="icons/configuracion.svg" class="w-5 h-5 invert" alt="Ajustes">
+                <span class="sidebar-text">Configuración</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <header class="flex justify-between items-start mb-6">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-800">Contenido educativo</h1>
+                <p class="text-gray-500 text-sm">Aprende y mejora tus finanzas personales</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="relative">
+                    <input type="text" placeholder="Buscar contenido..." class="bg-white border border-gray-100 rounded-2xl py-2 px-4 text-xs w-64 outline-none focus:ring-2 focus:ring-indigo-100">
+                </div>
+                <div class="w-10 h-10 bg-slate-400 rounded-full border-2 border-white shadow-sm overflow-hidden">
+                    <img src="icons/user.svg" class="w-full h-full object-cover" alt="User">
+                </div>
+            </div>
+        </header>
+
+        <!-- Filtros de Categoría -->
+        <div class="flex gap-3 mb-8 overflow-x-auto pb-2">
+            <button class="bg-indigo-500 text-white px-6 py-2 rounded-xl text-xs font-bold">Todos</button>
+            <button class="bg-white border border-gray-100 text-gray-500 px-6 py-2 rounded-xl text-xs font-bold hover:bg-gray-50 transition">Presupuesto</button>
+            <button class="bg-white border border-gray-100 text-gray-500 px-6 py-2 rounded-xl text-xs font-bold hover:bg-gray-50 transition">Ahorro</button>
+            <button class="bg-white border border-gray-100 text-gray-500 px-6 py-2 rounded-xl text-xs font-bold hover:bg-gray-50 transition">Inversiones</button>
+            <button class="bg-white border border-gray-100 text-gray-500 px-6 py-2 rounded-xl text-xs font-bold hover:bg-gray-50 transition">Deudas</button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Banner Destacado -->
+                <div class="bg-white rounded-[32px] p-8 relative overflow-hidden flex items-center min-h-[300px] shadow-sm border border-gray-100">
+                    <div class="z-10 max-w-[60%]">
+                        <span class="bg-indigo-50 text-indigo-500 text-[10px] font-extrabold px-3 py-1 rounded-lg uppercase">Recomendado</span>
+                        <h2 class="text-2xl font-bold text-slate-800 mt-4 leading-tight">Guía completa para crear tu presupuesto</h2>
+                        <p class="text-gray-500 text-sm mt-3">Aprende paso a paso cómo planificar tus ingresos, controlar tus gastos y lograr tus metas financieras.</p>
+                        <div class="mt-8 flex items-center gap-6">
+                            <button class="bg-indigo-600 text-white px-8 py-3 rounded-2xl text-xs font-bold hover:bg-indigo-700 transition">Ver guía completa</button>
+                            <span class="text-gray-400 text-xs flex items-center gap-2">
+                                <img src="icons/historial.svg" class="w-3.5 h-3.5 opacity-30"> 15 min lectura
+                            </span>
+                        </div>
+                    </div>
+                    <div class="absolute right-0 top-0 h-full w-1/2 flex items-center justify-center p-4">
+                        <img src="icons/educativo_hero.svg" class="max-h-full opacity-80" alt="Hero Illustration">
+                    </div>
+                </div>
+
+                <!-- Artículos Destacados -->
+                <section>
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-bold text-slate-800">Artículos destacados</h3>
+                        <button class="text-[10px] font-bold text-indigo-500">Ver todos</button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Card 1 -->
+                        <div class="bg-white rounded-3xl p-5 card-shadow border border-gray-100">
+                            <div class="bg-pink-50 h-32 rounded-2xl mb-4 flex items-center justify-center">
+                                <img src="icons/alcancia.svg" class="w-12 h-12 icon-indigo">
+                            </div>
+                            <h4 class="font-bold text-slate-700 text-xs mb-2">10 consejos para ahorrar sin sacrificar tu estilo de vida</h4>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="bg-emerald-50 text-emerald-500 text-[9px] font-bold px-2 py-1 rounded-md">Ahorro</span>
+                                <span class="text-[9px] text-gray-400">8 min lectura</span>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bg-white rounded-3xl p-5 card-shadow border border-gray-100">
+                            <div class="bg-blue-50 h-32 rounded-2xl mb-4 flex items-center justify-center">
+                                <img src="icons/tarjeta.svg" class="w-12 h-12 icon-indigo">
+                            </div>
+                            <h4 class="font-bold text-slate-700 text-xs mb-2">Cómo salir de deudas y tomar el control de tus finanzas</h4>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="bg-orange-50 text-orange-500 text-[9px] font-bold px-2 py-1 rounded-md">Deudas</span>
+                                <span class="text-[9px] text-gray-400">12 min lectura</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Columna Derecha -->
+            <div class="space-y-8">
+                <!-- Card Progreso -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-slate-800 mb-6 text-sm">Tu progreso</h3>
+                    <div class="flex flex-col items-center">
+                        <div class="relative w-32 h-32 mb-4 flex items-center justify-center">
+                            <svg class="w-full h-full progress-ring">
+                                <circle class="text-gray-100" stroke-width="8" stroke="currentColor" fill="transparent" r="50" cx="64" cy="64"/>
+                                <circle class="text-indigo-500" stroke-width="8" stroke-dasharray="314" stroke-dashoffset="204" stroke-linecap="round" stroke="currentColor" fill="transparent" r="50" cx="64" cy="64"/>
+                            </svg>
+                            <span class="absolute text-2xl font-bold text-slate-800">35%</span>
+                        </div>
+                        <p class="text-[11px] font-bold text-slate-700">¡Vas por buen camino!</p>
+                        <p class="text-[10px] text-gray-400 mt-1">Has completado 7 de 20 lecciones</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-gray-50">
+                        <div>
+                            <p class="text-[10px] text-gray-400 font-bold uppercase">Completadas</p>
+                            <p class="text-sm font-bold text-slate-800">7 lecciones</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-gray-400 font-bold uppercase">Tiempo total</p>
+                            <p class="text-sm font-bold text-slate-800">2h 15m</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rutas de Aprendizaje -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-bold text-slate-800 text-sm">Rutas de aprendizaje</h3>
+                        <button class="text-[10px] font-bold text-indigo-500">Ver todas</button>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="bg-emerald-50 p-3 rounded-2xl h-fit"><img src="icons/confirmar.svg" class="w-4 h-4 icon-green"></div>
+                            <div class="flex-1">
+                                <p class="text-[11px] font-bold text-slate-700">Finanzas básicas</p>
+                                <div class="w-full bg-gray-100 h-1.5 rounded-full mt-2 overflow-hidden">
+                                    <div class="bg-emerald-400 h-full w-[50%]"></div>
+                                </div>
+                                <span class="text-[9px] text-gray-400 mt-1 block">50% completado</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="bg-indigo-50 p-3 rounded-2xl h-fit"><img src="icons/alcancia.svg" class="w-4 h-4 icon-indigo"></div>
+                            <div class="flex-1">
+                                <p class="text-[11px] font-bold text-slate-700">Ahorro inteligente</p>
+                                <div class="w-full bg-gray-100 h-1.5 rounded-full mt-2 overflow-hidden">
+                                    <div class="bg-indigo-400 h-full w-[40%]"></div>
+                                </div>
+                                <span class="text-[9px] text-gray-400 mt-1 block">40% completado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-full mt-8 py-3 border border-gray-100 rounded-2xl text-[10px] font-bold text-slate-500 hover:bg-gray-50 transition">Ver todas las rutas ›</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
